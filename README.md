@@ -11,14 +11,14 @@ I'm using Nextjs with app router along with shadcn/ui, tailwindcss and tma.js(a 
 - [**Tailwind CSS**](https://tailwindcss.com/)
 - [**tma.js**](https://docs.telegram-mini-apps.com/)
 
-## Steps
+## Steps (Mini App)
 
 In case you are customizing your own, you may follow the steps
 
-1. Intall `@tma.js/sdk` and `@tma.js/sdk-react` packages
+1. Install `@tma.js/sdk` and `@tma.js/sdk-react` packages
 
 ```bash
-npm i @tma.js/sdk @tma.js/sdk-react
+pnpm i @tma.js/sdk @tma.js/sdk-react
 ```
 
 2. Create an Telegram mini app provider initial state component.
@@ -132,3 +132,32 @@ export default function RootLayout({
 ```
 
 We are good to go...
+
+## Telegram Bot
+
+Now lets setup our telegram bot
+
+1. First obtain your telegram bot tokens.
+
+I'll use `BotFather` to create a bot in this demo
+
+- Open Telegram in your device, Search for botfather in the searchbar
+- Then send `/newbot` command to telegram
+- Choose a suitable name and username then copy the token
+
+2. Goto `bot/src` and create a `config.ts`
+
+Initialize `dotEnv` and setup config.
+
+```typescript bot/src/config.ts
+import * as dotenv from "dotenv";
+
+dotenv.config();
+
+export const Config = {
+  NODE_ENV: process.env.NODE_ENV || "development",
+  APP_PORT: process.env.APP_PORT || 8088,
+  TELE_BOT_TOKEN: process.env.TELE_BOT_TOKEN || "",
+  TELE_BOT_WEB_LINK: process.env.TELE_BOT_WEB_LINK || "",
+};
+```
