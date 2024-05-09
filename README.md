@@ -4,24 +4,24 @@ Get started building mini apps for Telegram with our straightforward Telegram Mi
 
 ## Tech Stack
 
-I'm using Nextjs with app router along with shadcn/ui, tailwindcss and tma.js(a telegram miniapp warapper), It will be fun lets goo.
+I'm using Next.js with app router along with shadcn/ui, Tailwind CSS, and tma.js (a Telegram miniapp wrapper). It will be fun, let's go.
 
-- [**Nextjs**](https://nextjs.org/)
+- [**Next.js**](https://nextjs.org/)
 - [**shadcn/ui**](https://ui.shadcn.com/)
 - [**Tailwind CSS**](https://tailwindcss.com/)
 - [**tma.js**](https://docs.telegram-mini-apps.com/)
 
 ## Steps (Mini App)
 
-In case you are customizing your own, you may follow the steps
+In case you are customizing your own, you may follow the steps:
 
-1. Install `@tma.js/sdk` and `@tma.js/sdk-react` packages
+1. Install `@tma.js/sdk` and `@tma.js/sdk-react` packages:
 
 ```bash
 pnpm i @tma.js/sdk @tma.js/sdk-react
 ```
 
-2. Create an Telegram mini app provider initial state component.
+2. Create a Telegram mini app provider initial state component:
 
 ```typescript src/components/tma/tma-provider-initial-state.tsx
 // src/components/tma/tma-provider-initial-state.tsx
@@ -37,7 +37,7 @@ export function TmaProviderInitialState() {
 }
 ```
 
-3. Create an Telegram mini app loading compnent
+3. Create a Telegram mini app loading component:
 
 ```typescript src/components/tma/tma-provider-loading.tsx
 // src/components/tma/tma-provider-loading.tsx
@@ -53,7 +53,7 @@ export function TmaProviderLoading() {
 }
 ```
 
-4. Also create an Telegram mini app error component
+4. Also, create a Telegram mini app error component:
 
 ```typescript src/components/tma/tma-provider-error.tsx
 // src/components/tma/tma-provider-error.tsx
@@ -79,7 +79,7 @@ export function TmaProviderError({ error }: TmaProviderErrorProps) {
 }
 ```
 
-5. Now, lets create a Telegram mini app provider and make sure it's a client component, you can customise options as per your needs([docs](https://docs.telegram-mini-apps.com/packages/tma-js-sdk-react)), Also add those custom components we just created in the `<DisplayGate/>` component
+5. Now, let's create a Telegram mini app provider and make sure it's a client component. You can customize options as per your needs ([docs](https://docs.telegram-mini-apps.com/packages/tma-js-sdk-react)). Also, add those custom components we just created in the <DisplayGate/> component:
 
 ```typescript src/components/tma/index.tsx
 // src/components/tma/index.tsx
@@ -109,7 +109,7 @@ export function TmaSDKProvider({ children }: PropsWithChildren) {
 }
 ```
 
-6. Finally add tma provider to the root layout
+6. Finally, add Tma SDK provider to the root layout:
 
 ```typescript src/app/layout.tsx
 // src/app/layout.tsx
@@ -147,7 +147,7 @@ export default function RootLayout({
 pnpm dev
 ```
 
-7. Now make your app publically accessable
+7. Now make your app publicly accessible:
 
 You can use `ngrok`
 
@@ -159,19 +159,19 @@ Next lets setup telegram bot.
 
 ## Telegram Bot
 
-Now lets setup our telegram bot
+Now let's set up our Telegram bot:
 
-1. First obtain your telegram bot tokens.
+1. First, obtain your Telegram bot tokens.
 
-I'll use `BotFather` to create a bot in this demo
+I'll use `BotFather` to create a bot in this demo.
 
-- Open Telegram in your device, Search for botfather in the searchbar
-- Then send `/newbot` command to telegram
-- Choose a suitable name and username then copy the token
+- Open Telegram on your device, search for `BotFather` in the search bar.
+- Then send the `/newbot`` command to Telegram.
+- Choose a suitable name and username, then copy the token.
 
-2. Goto `bot/src` and create a `.env` file
+2. Go to `bot/src` and create a `.env` file.
 
-3. Fill your bot token and `ngrok` public url
+3. Fill in your bot token and `ngrok` public URL:
 
 ```bash
 # bot/src/.env
@@ -193,5 +193,4 @@ We are good to go...
 
 ---
 
-Open Telegram and get Started.
-Congratulations!
+Open Telegram and get started. Congratulations!
