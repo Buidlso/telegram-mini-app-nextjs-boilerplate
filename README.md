@@ -157,9 +157,16 @@ ngrok http 3000
 
 Next lets setup telegram bot.
 
-## Telegram Bot
+# Telegram Bot
 
-Now let's set up our Telegram bot:
+Now let's set up our Telegram bot.
+For Telegram bot I'll use Nodejs with Typescript, Dotenv and Telegraph, if you are following this repo `cd` to bot or setup a separate project and install depencies:
+
+```bash
+pnpm i dotenv telegraf
+```
+
+## Steps (Bot)
 
 1. First, obtain your Telegram bot tokens.
 
