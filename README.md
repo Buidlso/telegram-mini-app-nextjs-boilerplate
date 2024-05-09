@@ -24,6 +24,8 @@ pnpm i @tma.js/sdk @tma.js/sdk-react
 2. Create an Telegram mini app provider initial state component.
 
 ```typescript src/components/tma/tma-provider-initial-state.tsx
+// src/components/tma/tma-provider-initial-state.tsx
+
 import { Logo } from "@/components/logo";
 
 export function TmaProviderInitialState() {
@@ -38,6 +40,8 @@ export function TmaProviderInitialState() {
 3. Create an Telegram mini app loading compnent
 
 ```typescript src/components/tma/tma-provider-loading.tsx
+// src/components/tma/tma-provider-loading.tsx
+
 import { Loader } from "@/components/loader";
 
 export function TmaProviderLoading() {
@@ -52,6 +56,8 @@ export function TmaProviderLoading() {
 4. Also create an Telegram mini app error component
 
 ```typescript src/components/tma/tma-provider-error.tsx
+// src/components/tma/tma-provider-error.tsx
+
 type TmaProviderErrorProps = {
   error: unknown;
 };
@@ -76,6 +82,8 @@ export function TmaProviderError({ error }: TmaProviderErrorProps) {
 5. Now, lets create a Telegram mini app provider and make sure it's a client component, you can customise options as per your needs([docs](https://docs.telegram-mini-apps.com/packages/tma-js-sdk-react)), Also add those custom components we just created in the `<DisplayGate/>` component
 
 ```typescript src/components/tma/index.tsx
+// src/components/tma/index.tsx
+
 "use client";
 
 import { PropsWithChildren } from "react";
@@ -104,6 +112,8 @@ export function TmaSDKProvider({ children }: PropsWithChildren) {
 6. Finally add tma provider to the root layout
 
 ```typescript src/app/layout.tsx
+// src/app/layout.tsx
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -131,6 +141,20 @@ export default function RootLayout({
 }
 ```
 
+6. Start your app
+
+```bash
+pnpm dev
+```
+
+7. Now make your app publically accessable
+
+You can use `ngrok`
+
+```bash
+ngrok http 3000
+```
+
 Next lets setup telegram bot.
 
 ## Telegram Bot
@@ -147,25 +171,23 @@ I'll use `BotFather` to create a bot in this demo
 
 2. Goto `bot/src` and create a `.env` file
 
-3. Fill your bot token
+3. Fill your bot token and `ngrok` public url
 
 ```bash
+# bot/src/.env
+
 NODE_ENV="development"
 
 # Telegram Bot
 TELE_BOT_TOKEN="" # Your Telegram Bot Token
-TELE_BOT_WEB_LINK="" # Your Telegram Web Link
+TELE_BOT_WEB_LINK="" # ngrok public url in dev mode, public url in production
 ```
 
-4. Now make your app publically accessable
-
-You can use `ngrok`
+4. Start the bot
 
 ```bash
-ngrok http 3000
+pnpm start:dev
 ```
-
-5. Now copy `ngrok` public host and paste in the telegram bot `.env`
 
 We are good to go...
 
