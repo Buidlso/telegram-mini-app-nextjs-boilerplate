@@ -4,7 +4,6 @@ dotenv.config();
 
 export const Config = {
   NODE_ENV: process.env.NODE_ENV || "development",
-  APP_PORT: process.env.APP_PORT || 8088,
   TELE_BOT_TOKEN: process.env.TELE_BOT_TOKEN || "",
   TELE_BOT_WEB_LINK: process.env.TELE_BOT_WEB_LINK || "",
 };

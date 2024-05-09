@@ -131,7 +131,7 @@ export default function RootLayout({
 }
 ```
 
-We are good to go...
+Next lets setup telegram bot.
 
 ## Telegram Bot
 
@@ -145,19 +145,31 @@ I'll use `BotFather` to create a bot in this demo
 - Then send `/newbot` command to telegram
 - Choose a suitable name and username then copy the token
 
-2. Goto `bot/src` and create a `config.ts`
+2. Goto `bot/src` and create a `.env` file
 
-Initialize `dotEnv` and setup config.
+3. Fill your bot token
 
-```typescript bot/src/config.ts
-import * as dotenv from "dotenv";
+```bash
+NODE_ENV="development"
 
-dotenv.config();
-
-export const Config = {
-  NODE_ENV: process.env.NODE_ENV || "development",
-  APP_PORT: process.env.APP_PORT || 8088,
-  TELE_BOT_TOKEN: process.env.TELE_BOT_TOKEN || "",
-  TELE_BOT_WEB_LINK: process.env.TELE_BOT_WEB_LINK || "",
-};
+# Telegram Bot
+TELE_BOT_TOKEN="" # Your Telegram Bot Token
+TELE_BOT_WEB_LINK="" # Your Telegram Web Link
 ```
+
+4. Now make your app publically accessable
+
+You can use `ngrok`
+
+```bash
+ngrok http 3000
+```
+
+5. Now copy `ngrok` public host and paste in the telegram bot `.env`
+
+We are good to go...
+
+---
+
+Open Telegram and get Started.
+Congratulations!
