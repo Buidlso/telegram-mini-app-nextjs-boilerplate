@@ -4,7 +4,7 @@ Get started building mini apps for Telegram with our straightforward Telegram Mi
 
 ## Tech Stack
 
-I'm using Next.js with app router along with shadcn/ui, Tailwind CSS, and tma.js (a Telegram miniapp wrapper). It will be fun, let's go.
+I'm using Next.js with app router along with shadcn/ui, Tailwind CSS, and tma.js (a Telegram miniapp wrapper that provides telegram auth user). It will be fun, let's go.
 
 - [**Next.js**](https://nextjs.org/)
 - [**shadcn/ui**](https://ui.shadcn.com/)
@@ -134,6 +134,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/*This will Provide Telegram authenticated user */}
         <TmaSDKProvider>{children}</TmaSDKProvider>
       </body>
     </html>
